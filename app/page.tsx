@@ -1,7 +1,9 @@
-import { Button } from "@/components/ui/button";
+import { Navbar } from "@/components/Shared/Navbar";
 
 export default function Home() {
   return (
-    <Button variant="default" size="default" >hola cube</Button>
+   <div className="relative bg-zinc-900">
+    <Navbar />
+   </div>
   );
 }
