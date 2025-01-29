@@ -27,6 +27,7 @@ export function LoginForm() {
         },
       })
       const onSubmit = (values: z.infer<typeof formSchema>) => {
+        setError(error)
     console.log(values)
   }
 
