@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { formSchema } from "./RegisterForm.form";
-// import { toast } from "@/hooks/use-toast";
+import { toast } from "@/hooks/use-toast";
 import { useRouter } from "next/navigation";
 
 export function RegisterForm() {
@@ -34,16 +34,16 @@ export function RegisterForm() {
     try {
       await axios.post("/api/auth/register", values);
 
-    //   toast({
-    //     title: "El usuario se ha registrado correctamente",
-    //   });
+      toast({
+        title: "El usuario se ha registrado correctamente",
+      });
       router.push("/profiles");
     } catch (error) {
       console.log(error);
-    //   toast({
-    //     title: "Ha ocurrido un error al registrar el usuario",
-    //     variant: "destructive",
-    //   });
+      toast({
+        title: "Ha ocurrido un error al registrar el usuario",
+        variant: "destructive",
+      });
     }
   };
 
